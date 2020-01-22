@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '12.0'
 
   s.source_files = 'SecuXPaymentKit/Classes/**/*'
-  s.vendored_frameworks = 'SecuXPaymentKit/Frameworks/*'
+  #s.vendored_frameworks = 'SecuXPaymentKit/Frameworks/*'
   
   # s.resource_bundles = {
   #   'SecuXPaymentKit' => ['SecuXPaymentKit/Assets/*.png']
@@ -39,8 +39,9 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  #s.dependency 'AFNetworking', '~> 2.3'
   
   s.static_framework = true
   s.dependency 'SPManager'
+  #s.dependency 'SecuXMaochunTest'
 end
