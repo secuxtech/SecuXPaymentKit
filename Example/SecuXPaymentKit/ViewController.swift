@@ -18,15 +18,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //let tt = MyTest()
+        
         
         self.decentAccount = SecuXAccount(name: "ifun-886-936105934-6", type: .DCT, path: "", address: "", key: "")
         
         self.accountMgr = SecuXAccountManager()
         self.getAccountBalance(account: self.decentAccount!)
-        
+        self.getAccountHistory(account: self.decentAccount!)
 
+        
         self.paymentMgr = SecuXPaymentManager()
         self.paymentMgr!.delegate = self
         
@@ -72,9 +72,9 @@ class ViewController: UIViewController {
             if ret{
                 print("Get account history successfully!")
                 
-                //for item in historyArr{
-                //    print("")
-                //}
+                for item in historyArr{
+                    print("\(item.timestamp) \(item.tx_type) \(item.formatted_amount) \(item.amount_usd) \(item.detailsUrl)")
+                }
                 
             }else{
                 print("Get account history failed!")
