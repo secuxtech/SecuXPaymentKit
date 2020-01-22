@@ -1,0 +1,6 @@
+framework module SecuXPaymentKit {
+  umbrella header "SecuXPaymentKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

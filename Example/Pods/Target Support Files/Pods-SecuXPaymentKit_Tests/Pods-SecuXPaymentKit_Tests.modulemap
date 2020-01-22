@@ -1,0 +1,6 @@
+framework module Pods_SecuXPaymentKit_Tests {
+  umbrella header "Pods-SecuXPaymentKit_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

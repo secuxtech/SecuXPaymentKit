@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/maochuns/SecuXPaymentKit'
+  s.homepage         = 'https://github.com/secuxtech/SecuXPaymentKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'maochuns' => 'maochuns.sun@gmail.com' }
-  s.source           = { :git => 'https://github.com/maochuns/SecuXPaymentKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/secuxtech/SecuXPaymentKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

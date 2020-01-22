@@ -1,0 +1,6 @@
+framework module Pods_SecuXPaymentKit_Example {
+  umbrella header "Pods-SecuXPaymentKit_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
