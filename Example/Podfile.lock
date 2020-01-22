@@ -1,15 +1,22 @@
 PODS:
-  - SecuXPaymentKit (0.1.0)
+  - SecuXPaymentKit (0.0.1):
+    - SPManager
+  - SPManager (0.0.1)
 
 DEPENDENCIES:
   - SecuXPaymentKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SPManager
 
 EXTERNAL SOURCES:
   SecuXPaymentKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SecuXPaymentKit: d1c163cd8f3bebb2853821600c2019894c5d4715
+  SecuXPaymentKit: a9e41336b40dd9ff22264755891e7b1991fcaf3e
+  SPManager: fcc6431a84649e2792ca20a4dc0e130361a4f5e7
 
 PODFILE CHECKSUM: d9172f1a538ed078b209e271f90c0cbd29e7c6f3
 

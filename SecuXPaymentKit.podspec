@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '12.0'
 
   s.source_files = 'SecuXPaymentKit/Classes/**/*'
+  s.vendored_frameworks = 'SecuXPaymentKit/Frameworks/*'
   
   # s.resource_bundles = {
   #   'SecuXPaymentKit' => ['SecuXPaymentKit/Assets/*.png']
