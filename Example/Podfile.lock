@@ -1,7 +1,7 @@
 PODS:
   - SecuXPaymentKit (0.0.1):
     - SPManager
-  - SPManager (0.0.1)
+  - SPManager (0.0.2)
 
 DEPENDENCIES:
   - SecuXPaymentKit (from `../`)
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SecuXPaymentKit: a9e41336b40dd9ff22264755891e7b1991fcaf3e
-  SPManager: fcc6431a84649e2792ca20a4dc0e130361a4f5e7
+  SPManager: 90be8b63c4e4440a131b3a2ecd6042cc9d01633b
 
 PODFILE CHECKSUM: c5e9f78622261d23da410268c9942975aafac3ae
 

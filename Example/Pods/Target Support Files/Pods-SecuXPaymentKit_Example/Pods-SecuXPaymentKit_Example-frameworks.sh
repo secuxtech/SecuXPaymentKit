@@ -191,12 +191,10 @@ if [ -r "${ARTIFACT_LIST_FILE}" ]; then
 fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${PODS_ROOT}/SecuXMaochunTest/SecuXMaochunTest.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SecuXPaymentKit/SecuXPaymentKit.framework"
+  install_framework "${PODS_ROOT}/SPManager/SPManager.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${PODS_ROOT}/SecuXMaochunTest/SecuXMaochunTest.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SecuXPaymentKit/SecuXPaymentKit.framework"
+  install_framework "${PODS_ROOT}/SPManager/SPManager.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
