@@ -12,7 +12,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Usage
 
-### Add privacy in the plist
+### Add bluetooth privacy permissions in the plist
+
+![Image](Readme_PlistImg)
 
 ### Import the the module
 
@@ -57,15 +59,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
      
      func paymentDone(ret: Bool, errorMsg: String) {
          print("paymentDone \(ret) \(errorMsg)")
-         
      }
-     
      
      func updatePaymentStatus(status: String) {
          print("updatePaymentStatus \(status)")
      }
-     
-     
      
      func getStoreInfoDone(ret: Bool, storeName: String, storeLogo: UIImage) {
          print("getStoreInfoDone")
@@ -76,8 +74,6 @@ To run the example project, clone the repo, and run `pod install` from the Examp
              print("Get store info. faied!")
          }
      }
-     
-     
  }
 ```
 
@@ -94,11 +90,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 * Do payment
 
 ```swift
- var paymentMgr = SecuXPaymentManager()
- paymentMgr!.delegate = self
-
- let paymentInfo = "{\"amount\":\"100\", \"coinType\":\"DCT\", \"deviceID\":\"4ab10000726b\"}"
- paymentMgr!.doPayment(account: account!, storeName: storeName, paymentInfo: self.paymentInfo)
+ paymentMgr.doPayment(account: account!, storeName: storeName, paymentInfo: self.paymentInfo)
 ```
 
 ## Requirements

@@ -212,12 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 439P2P24S8;
+						DevelopmentTeam = RQXFK5449U;
 						LastSwiftMigration = 1130;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 439P2P24S8;
+						DevelopmentTeam = RQXFK5449U;
 						LastSwiftMigration = 1130;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -485,7 +485,7 @@
 			baseConfigurationReference = E71FAF8EF4C3D71EB57580FE /* Pods-SecuXPaymentKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 439P2P24S8;
+				DEVELOPMENT_TEAM = RQXFK5449U;
 				INFOPLIST_FILE = SecuXPaymentKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -501,7 +501,7 @@
 			baseConfigurationReference = 565B8E6EB16540DD0AFCD40C /* Pods-SecuXPaymentKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 439P2P24S8;
+				DEVELOPMENT_TEAM = RQXFK5449U;
 				INFOPLIST_FILE = SecuXPaymentKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -516,7 +516,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 53EA4880DD1BFFF230CBCFEB /* Pods-SecuXPaymentKit_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 439P2P24S8;
+				DEVELOPMENT_TEAM = RQXFK5449U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -539,7 +539,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5521D4360D23B86426DE1CA /* Pods-SecuXPaymentKit_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 439P2P24S8;
+				DEVELOPMENT_TEAM = RQXFK5449U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         //Must set the delegate of the SecuXPaymentManager
         self.paymentMgr!.delegate = self
         
-        self.paymentInfo = "{\"amount\":\"11\", \"coinType\":\"DCT\", \"deviceID\":\"4ab10000726b\"}"
+        self.paymentInfo = "{\"amount\":\"100\", \"coinType\":\"DCT\", \"deviceID\":\"4ab10000726b\"}"
         self.paymentMgr!.getStoreInfo(paymentInfo: self.paymentInfo)
         
     }
