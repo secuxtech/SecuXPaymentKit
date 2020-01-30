@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SecuXPaymentKit'
-  s.version          = '0.0.1'
-  s.summary          = 'A short description of SecuXPaymentKit.'
+  s.version          = '0.0.2'
+  s.summary          = 'SecuX Payment SDK amd sample.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/secuxtech/SecuXPaymentKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'maochuns' => 'maochuns.sun@gmail.com' }
+  s.author           = { 'SecuX' => 'maochunsun@secuxtech.com' }
   s.source           = { :git => 'https://github.com/secuxtech/SecuXPaymentKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
