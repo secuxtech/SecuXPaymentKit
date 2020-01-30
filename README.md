@@ -40,6 +40,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
      
  }
 ```
+getAccountBalance(account: ) returns SecuXAccountBalance object
+
+```swift
+ public struct SecuXAccountBalance: Codable {
+     public var balance: Double
+     public var formattedBalance: Double
+     public var balance_usd: Double
+ }
+```
+getAccountHistory(account:) returns SecuXAccountHistory object array
 
 ```swift
  public struct SecuXAccountHistory: Codable {
@@ -54,13 +64,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
  }
  ```
 
-```swift
- public struct SecuXAccountBalance: Codable {
-     public var balance: Double
-     public var formattedBalance: Double
-     public var balance_usd: Double
- }
-```
+
 
 ### Use SecuXPaymentManager to get store info. and do payment
 

@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         self.getAccountBalance(account: self.decentAccount!)
         self.getAccountHistory(account: self.decentAccount!)
 
-        //User SecuXPaymentManager to get store infor. and do payment
+        //User SecuXPaymentManager to get store info. and do payment
         self.paymentMgr = SecuXPaymentManager()
         
         //Must set the delegate of the SecuXPaymentManager
