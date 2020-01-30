@@ -43,16 +43,18 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ```swift
  public struct SecuXAccountHistory: Codable {
-     public var address: String
-     public var tx_type: String
+     public var address: String                 //Send to or receive from address
+     public var tx_type: String                 //"Send" or "Receive"
      public var amount: Double
-     public var amount_symbol: String?
+     public var amount_symbol: String?          //Coin type, e.g. DCT
      public var formatted_amount: Double
      public var amount_usd: Double
-     public var timestamp: String
-     public var detailsUrl: String
+     public var timestamp: String               //YYYY-MM-DD hh:mm:ss
+     public var detailsUrl: String              //Transaction details link
  }
+ ```
 
+```swift
  public struct SecuXAccountBalance: Codable {
      public var balance: Double
      public var formattedBalance: Double
