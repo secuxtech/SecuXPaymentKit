@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+// Import SecuXPasymentKit
 import SecuXPaymentKit
 
 class ViewController: UIViewController {
@@ -19,15 +21,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //New SecsuXAccount
         self.decentAccount = SecuXAccount(name: "ifun-886-936105934-6", type: .DCT, path: "", address: "", key: "")
         
+        //Use SecuXAccountManager to get account balance and history
         self.accountMgr = SecuXAccountManager()
         self.getAccountBalance(account: self.decentAccount!)
         self.getAccountHistory(account: self.decentAccount!)
 
-        
+        //User SecuXPaymentManager to get store infor. and do payment
         self.paymentMgr = SecuXPaymentManager()
+        
+        //Must set the delegate of the SecuXPaymentManager
         self.paymentMgr!.delegate = self
         
         self.paymentInfo = "{\"amount\":\"11\", \"coinType\":\"DCT\", \"deviceID\":\"4ab10000726b\"}"
@@ -87,7 +92,9 @@ class ViewController: UIViewController {
 
 }
 
+//MARK: SecuXPaymentManagerDelegate implementation
 extension ViewController: SecuXPaymentManagerDelegate{
+    
     func paymentDone(ret: Bool, errorMsg: String) {
         print("paymentDone \(ret) \(errorMsg)")
         
@@ -98,14 +105,21 @@ extension ViewController: SecuXPaymentManagerDelegate{
         }
     }
     
+    
     func updatePaymentStatus(status: String) {
         print("updatePaymentStatus \(status)")
     }
     
+    
+    
     func getStoreInfoDone(ret: Bool, storeName: String, storeLogo: UIImage) {
         print("getStoreInfoDone")
         
-        paymentMgr!.doPayment(account: decentAccount!, storeName: storeName, paymentInfo: self.paymentInfo)
+        if ret{
+            paymentMgr!.doPayment(account: decentAccount!, storeName: storeName, paymentInfo: self.paymentInfo)
+        }else{
+            print("Get store info. faied!")
+        }
     }
     
     

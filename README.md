@@ -7,9 +7,25 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `pod install` from the Example directory
+
+Add privacy in the plist
+
+Import the the module
+
+```swift 
+ import SecuXPaymentKit
+```
+
+Get account balance and history
+
+Get store info.
+
+Do payment
 
 ## Requirements
+
+Deployment target of iOS 12.0 or higher
 
 ## Installation
 
