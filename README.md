@@ -22,7 +22,7 @@ pod 'SecuXPaymentKit'
 
 ## Author
 
-maochuns, maochuns.sun@gmail.com
+SecuX, maochunsun@secuxtech.com
 
 ## License
 
