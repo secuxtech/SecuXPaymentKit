@@ -14,7 +14,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ### Add bluetooth privacy permissions in the plist
 
-![Image](Readme_PlistImg)
+![Screenshot](Readme_PlistImg.png)
 
 ### Import the the module
 
@@ -25,8 +25,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### Use SecuXAccountManager to get account balance and history
 
 ```swift
- let account = SecuXAccount(name: "xxxx", type: .DCT, path: "", address: "", key: "")
  let accountMgr = SecuXAccountManager()
+ let account = SecuXAccount(name: "xxxx", type: .DCT, path: "", address: "", key: "")
  let (ret, balance) = accountMgr!.getAccountBalance(account: account)
  if ret{
      print("Get account balance succssfully! \(balance?.balance ?? 0) USD Balance = \(balance?.balance_usd ?? 0) Balance = \(balance?.formattedBalance ?? 0)")
