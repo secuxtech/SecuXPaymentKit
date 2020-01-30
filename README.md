@@ -19,6 +19,23 @@ Import the the module
 
 Get account balance and history
 
+```swift
+ let account = SecuXAccount(name: "xxxx", type: .DCT, path: "", address: "", key: "")
+ let accountMgr = SecuXAccountManager()
+ let (ret, balance) = accountMgr!.getAccountBalance(account: account)
+ if ret{
+     print("Get account balance succssfully! \(balance?.balance ?? 0) USD Balance = \(balance?.balance_usd ?? 0) Balance = \(balance?.formattedBalance ?? 0)")
+ }
+ 
+ let (ret, historyArr) = accountMgr!.getAccountHistory(account: account)
+ if ret{
+     for item in historyArr{
+         print("\(item.timestamp) \(item.tx_type) \(item.formatted_amount) \(item.amount_usd) \(item.detailsUrl)")
+     }
+     
+ }
+```
+
 Get store info.
 
 Do payment
