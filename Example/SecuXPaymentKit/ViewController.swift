@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Import SecuXPasymentKit
+// Import SecuXPasymentKit module
 import SecuXPaymentKit
 
 class ViewController: UIViewController {
@@ -34,7 +34,8 @@ class ViewController: UIViewController {
         
         //Must set the delegate of the SecuXPaymentManager
         self.paymentMgr!.delegate = self
-        
+         
+        //Payment information JSON: {"amount":"10", "coinType":"IFC", "deviceID":"4ab10000726b"}
         self.paymentInfo = "{\"amount\":\"100\", \"coinType\":\"DCT\", \"deviceID\":\"4ab10000726b\"}"
         self.paymentMgr!.getStoreInfo(paymentInfo: self.paymentInfo)
         
@@ -95,6 +96,7 @@ class ViewController: UIViewController {
 //MARK: SecuXPaymentManagerDelegate implementation
 extension ViewController: SecuXPaymentManagerDelegate{
     
+    //Called when payment is completed. Returns payment result and error message.
     func paymentDone(ret: Bool, errorMsg: String) {
         print("paymentDone \(ret) \(errorMsg)")
         
@@ -105,13 +107,13 @@ extension ViewController: SecuXPaymentManagerDelegate{
         }
     }
     
-    
+    //Called when payment status is changed. Payment status are: "Device connecting...", "DCT transferring..." and "Device verifying..."
     func updatePaymentStatus(status: String) {
         print("updatePaymentStatus \(status)")
     }
     
     
-    
+    //Called when get store information is completed. Returns store name and store logo.
     func getStoreInfoDone(ret: Bool, storeName: String, storeLogo: UIImage) {
         print("getStoreInfoDone")
         
