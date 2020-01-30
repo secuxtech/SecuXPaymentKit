@@ -9,15 +9,18 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory
 
-Add privacy in the plist
 
-Import the the module
+## Usage
+
+### Add privacy in the plist
+
+### Import the the module
 
 ```swift 
  import SecuXPaymentKit
 ```
 
-Get account balance and history
+### Use SecuXAccountManager to get account balance and history
 
 ```swift
  let account = SecuXAccount(name: "xxxx", type: .DCT, path: "", address: "", key: "")
@@ -36,13 +39,72 @@ Get account balance and history
  }
 ```
 
-Get store info.
+### Use SecuXPaymentManager to get store info. and do payment
 
-Do payment
+* Implement SecuXPaymentManagerDelegate
+
+    **func paymentDone(ret: Bool, errorMsg: String)** 
+    Called when payment is completed. Returns payment result and error message.
+
+    **func updatePaymentStatus(status: String)** 
+    Called when payment status is changed. Payment status are: "Device connecting...", "DCT transferring..." and "Device verifying..."
+    
+    **func getStoreInfoDone(ret: Bool, storeName: String, storeLogo: UIImage)**
+    Called when get store information is completed. Returns store name and store logo.
+    
+```swift
+ extension ViewController: SecuXPaymentManagerDelegate{
+     
+     func paymentDone(ret: Bool, errorMsg: String) {
+         print("paymentDone \(ret) \(errorMsg)")
+         
+     }
+     
+     
+     func updatePaymentStatus(status: String) {
+         print("updatePaymentStatus \(status)")
+     }
+     
+     
+     
+     func getStoreInfoDone(ret: Bool, storeName: String, storeLogo: UIImage) {
+         print("getStoreInfoDone")
+         
+         if ret{
+             paymentMgr!.doPayment(account: decentAccount!, storeName: storeName, paymentInfo: self.paymentInfo)
+         }else{
+             print("Get store info. faied!")
+         }
+     }
+     
+     
+ }
+```
+
+* Get store information
+
+```swift
+ var paymentMgr = SecuXPaymentManager()
+ paymentMgr!.delegate = self
+
+ let paymentInfo = "{\"amount\":\"100\", \"coinType\":\"DCT\", \"deviceID\":\"4ab10000726b\"}"
+ paymentMgr.getStoreInfo(paymentInfo: self.paymentInfo)
+```
+
+* Do payment
+
+```swift
+ var paymentMgr = SecuXPaymentManager()
+ paymentMgr!.delegate = self
+
+ let paymentInfo = "{\"amount\":\"100\", \"coinType\":\"DCT\", \"deviceID\":\"4ab10000726b\"}"
+ paymentMgr!.doPayment(account: account!, storeName: storeName, paymentInfo: self.paymentInfo)
+```
 
 ## Requirements
 
-Deployment target of iOS 12.0 or higher
+* iOS 12.0+
+* Swift 5.0
 
 ## Installation
 
