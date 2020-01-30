@@ -125,11 +125,23 @@ getAccountHistory(account:) returns SecuXAccountHistory object array
 
 ## Installation
 
+
+### CocoaPod
+
 SecuXPaymentKit is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'SecuXPaymentKit'
+```
+
+### Carthage
+
+To integrate SecuXPaymentKit into your Xcode project using Carthage, specify it in your Cartfile file:
+
+```ruby
+binary "https://maochuns.github.io/SPManager.json"
+github "secuxtech/SecuXPaymentKit"
 ```
 
 ## Author
