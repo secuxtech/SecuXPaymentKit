@@ -19,7 +19,7 @@ open class SecuXAccountManager{
         
         switch account.type{
             
-        case .DCT:
+        case .DCT, .IFC:
             return self.getDCTAccountBalance(account: account)
             
         
@@ -35,9 +35,8 @@ open class SecuXAccountManager{
         
         switch account.type{
 
-        case .DCT:
+        case .DCT, .IFC:
             return self.getDCTAccountHistory(account: account)
-            //break
             
         default:
             break
@@ -46,6 +45,36 @@ open class SecuXAccountManager{
         return (false, [])
     }
     
+    
+    open func getCoinUSDRate() -> [CoinType: Double]{
+        
+        var rateDict: [CoinType: Double] = [:]
+        
+        let (ret, data) = self.secXSvrReqHandler.getCoinCurrency()
+        if ret, let data = data{
+            do{
+                let jsonArr  = try JSONSerialization.jsonObject(with: data, options: []) as! [[String : String]]
+                //print(jsonArr)
+                
+                for json in jsonArr{
+                    
+                    if let type = json["coinType"], let coinType = CoinType(rawValue: type),
+                        let rate = json["usdPrice"], let coinRate = Double(rate){
+                        
+                        rateDict[coinType] = coinRate
+                    }
+
+                }
+
+            }catch{
+                logw("updateCoinCurrencyAction error: " + error.localizedDescription)
+            }
+        }else{
+            logw("updateCoinCurrencyAction failed")
+        }
+        
+        return rateDict
+    }
     
     
     private func getDCTAccountBalance(account: SecuXAccount) -> (Bool, SecuXAccountBalance?){

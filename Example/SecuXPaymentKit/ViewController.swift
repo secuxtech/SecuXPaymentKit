@@ -15,20 +15,24 @@ class ViewController: UIViewController {
     
     var decentAccount: SecuXAccount?
     var accountMgr: SecuXAccountManager?
+    var coinToUSDRateDict: [CoinType:Double] = [:]
+    
     var paymentMgr: SecuXPaymentManager?
     var paymentInfo = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //New SecsuXAccount
-        self.decentAccount = SecuXAccount(name: "ifun-886-936105934-6", type: .DCT, path: "", address: "", key: "")
+        self.decentAccount = SecuXAccount(name: "ifun-886-936105934-6", type: .IFC, path: "", address: "", key: "")
         
         //Use SecuXAccountManager to get account balance and history
         self.accountMgr = SecuXAccountManager()
         self.getAccountBalance(account: self.decentAccount!)
         self.getAccountHistory(account: self.decentAccount!)
 
+        
         //User SecuXPaymentManager to get store info. and do payment
         self.paymentMgr = SecuXPaymentManager()
         
@@ -56,10 +60,18 @@ class ViewController: UIViewController {
     
     func getAccountBalance(account: SecuXAccount){
         DispatchQueue.global(qos: .default).async{
+            
+            self.coinToUSDRateDict = self.accountMgr!.getCoinUSDRate()
+            
             let (ret, balance) = self.accountMgr!.getAccountBalance(account: account)
-            if ret{
+            if ret, let balance = balance{
                 
-                print("Get account balance succssfully! \(balance?.balance ?? 0) USD Balance = \(balance?.balance_usd ?? 0) Balance = \(balance?.formattedBalance ?? 0)")
+                var usdBalance = balance.balance_usd
+                if usdBalance == 0, balance.formattedBalance > 0, let rate = self.coinToUSDRateDict[account.type]{
+                    usdBalance = balance.formattedBalance * rate
+                }
+                
+                print("Get account balance succssfully! \(balance.balance) USD Balance = \(usdBalance) Balance = \(balance.formattedBalance)")
 
                 
             }else{
@@ -79,7 +91,7 @@ class ViewController: UIViewController {
                 print("Get account history successfully!")
                 
                 for item in historyArr{
-                    print("\(item.timestamp) \(item.tx_type) \(item.formatted_amount) \(item.amount_usd) \(item.detailsUrl)")
+                    print("\(item.timestamp) \(item.tx_type) \(item.formatted_amount) \(item.amount_symbol ?? "") \(item.amount_usd) \(item.detailsUrl)")
                 }
                 
             }else{

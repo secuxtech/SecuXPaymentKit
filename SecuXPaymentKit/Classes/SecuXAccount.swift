@@ -24,7 +24,6 @@ public enum CoinType : String{
     case IFC
 }
 
-
 public struct SecuXAccountHistory: Codable {
     public var address: String
     public var tx_type: String
@@ -42,28 +41,15 @@ public struct SecuXAccountBalance: Codable {
     public var balance_usd: Double
 }
 
-/*
-struct AccountInfo: Codable {
-    var name: String
-    var path: String
-    var type: String
-    var balance: String
-    var usdBalance: String
-    var ifcBalance: String
-    var address: String
-    var key: String
-    var history: [AccountHistory]
- }
- */
 
 open class SecuXAccount {
 
-    var name: String
-    let type: CoinType
+    public var name: String
+    public var type: CoinType
     
-    var thePath: String
-    var theAddress: String
-    var theKey: String
+    public var thePath: String
+    public var theAddress: String
+    public var theKey: String
     
     
     public init(name: String, type: CoinType, path: String, address: String, key: String) {
