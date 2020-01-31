@@ -147,7 +147,7 @@ github "secuxtech/SecuXPaymentKit"
 
 ## Demo APP
 
-Please find more in our [demo app] (https://github.com/secuxtech/SecuXPayDemo-iOS)
+Please find more in our [demo app](https://github.com/secuxtech/SecuXPayDemo-iOS)
 
 ## Author
 
