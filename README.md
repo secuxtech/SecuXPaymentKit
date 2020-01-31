@@ -145,6 +145,10 @@ binary "https://maochuns.github.io/SPManager.json"
 github "secuxtech/SecuXPaymentKit"
 ```
 
+## Demo APP
+
+Please find more in our [demo app] (https://github.com/secuxtech/SecuXPayDemo-iOS)
+
 ## Author
 
 SecuX, maochunsun@secuxtech.com
